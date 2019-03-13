@@ -22,4 +22,3 @@ RUN set -ex; \
 VOLUME /srv/fail2rest/ /var/run/fail2ban/fail2ban.sock
 
 ENTRYPOINT ["/entrypoint.sh"]
-CMD ["/bin/sh", "-c", "fail2rest --config /srv/fail2rest/config.json"]

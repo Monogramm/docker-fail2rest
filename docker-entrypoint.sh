@@ -14,4 +14,4 @@ if [ ! -f /srv/fail2rest/config.json ]; then
 fi
 
 echo "fail2rest starting..."
-exec "$@"
+fail2rest --config /srv/fail2rest/config.json
