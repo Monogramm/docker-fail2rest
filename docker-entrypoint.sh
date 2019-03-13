@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-# Create a default config if autoconfig enabled
+# Create a default config
 if [ ! -f /srv/fail2rest/config.json ]; then
 	echo "fail2rest configuration initialization..."
 
