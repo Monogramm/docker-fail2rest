@@ -19,6 +19,6 @@ RUN set -ex; \
 	# Make sure the entrypoint is executable
 	chmod 755 /entrypoint.sh
 
-VOLUME /srv/fail2rest/ /var/run/fail2ban/fail2ban.sock
+VOLUME /srv/fail2rest/ /var/run/fail2ban/
 
 ENTRYPOINT ["/entrypoint.sh"]
