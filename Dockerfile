@@ -13,12 +13,13 @@ RUN set -ex; \
 		git build-base \
 	; \
 	# Get and install fail2rest
-    go get -v github.com/Sean-Der/fail2rest && \
+    go get -v github.com/Sean-Der/fail2rest; \
     go install -v github.com/Sean-Der/fail2rest; \
+	ln -s /root/go/bin/fail2rest /usr/bin/; \
 	# Make sure the entrypoint is executable
 	chmod 755 /entrypoint.sh
 
 VOLUME /srv/fail2rest/ /var/run/fail2ban/fail2ban.sock
 
 ENTRYPOINT ["/entrypoint.sh"]
-CMD ["fail2rest", "--config", "/srv/fail2rest/config.json"]
+CMD ["/bin/sh", "-c", "fail2rest --config /srv/fail2rest/config.json"]
